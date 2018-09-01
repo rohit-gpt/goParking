@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>goParking</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css"  media="screen,projection"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pricing.css">
+</head>
+<body>
+	<div class="navbar-fixed">
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="/" class="brand-logo center"><i class="fas fa-parking fa-2x"></i>goParking</a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="#pricing" class="navLinks">Pricing</a></li>
+		      	<li><a href="#" class="navLinks">Extend my Reservation</a></li>
+		        <li><a href="#" class="navLinks">Contact Us</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	</div>
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="#pricing">Pricing</a></li>
+	    <li><a href="#">For Patrons</a></li>
+	    <li><a href="#">Contact Us</a></li>
+	</ul>
+	<div id="pricing">
+		<div class="container">
+			<center><h2>Our Pricing</h2></center>
+			<div id="smallBox">
+					<table id="t01">
+						<tr>
+							<th>Days</th>
+							<th>2 Wheeler</th>
+							<th>4 Wheeler</th>
+						</tr>
+						<tr>
+							<th>Mon/Tue/Wed/Thurs</th>
+							<td><i class="fas fa-rupee-sign"></i> 15 / hr</td>
+							<td><i class="fas fa-rupee-sign"></i> 25 / hr</td>
+						</tr>
+						<tr>
+							<th>Fri/Sat/Sun/Holidays</th>
+							<td><i class="fas fa-rupee-sign"></i> 25 / hr</td>
+							<td><i class="fas fa-rupee-sign"></i> 40 / hr</td>
+						</tr>
+					</table>	
+			</div>
+			<p>
+				<span style="font-size: 2em;"><strong>#</strong></span> If you wish to extend your reservation, you may do so by clicking on <a href="#">Extend my Reservation</a> <span style="font-size: 1.2em;"><strong>(Subject to availablity)</strong></span>
+				<br><br>
+				<span style="font-size: 2em;"><strong>#</strong></span> If you fail to free your reserved parking space in time, a fine of <i class="fas fa-rupee-sign"></i> 1000 might be imposed and/or the matter will be handled as per the jurisdiction of mall.
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="/javascripts/materialize.min.js"></script>
+</body>
+</html>

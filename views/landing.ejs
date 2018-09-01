@@ -5,25 +5,92 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css"  media="screen,projection"/>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/landing.css">
 </head>
 <body>
 	<div class="navbar-fixed">
 		<nav>
 		    <div class="nav-wrapper">
-		      <a href="/" class="brand-logo center">goParking</a>
+		      <a href="/" class="brand-logo center"><i class="fas fa-parking fa-2x"></i>goParking</a>
 		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
-		        <li><a href="#">For Patrons</a></li>
-		        <li><a href="#">Contact Us</a></li>
+		      	<li><a href="/pricing" class="navLinks">Pricing</a></li>
+		      	<li><a href="#" class="navLinks">Extend my Reservation</a></li>
+		        <li><a href="#" class="navLinks">Contact Us</a></li>
 		      </ul>
 		    </div>
 		</nav>
 	</div>
 	<ul class="sidenav" id="mobile-demo">
+		<li><a href="/pricing">Pricing</a></li>
 	    <li><a href="#">For Patrons</a></li>
 	    <li><a href="#">Contact Us</a></li>
 	</ul>
+	<div>
+		<div class="container">
+			<!-- <div class="row"> -->
+				<!-- <div class="col s7" id="bigBox"> -->
+					<form id="bigBox">
+						<div class="input-field">
+				          <input type="text" id="autocomplete-input" class="autocomplete">
+				          <label for="autocomplete-input" style="font-size: 1.2em;">Which Mall are you heading to?</label>
+				        </div>
+				        <div>
+				        	<label class="labels">Vehicle Type</label>
+				        	<p>
+								<label>
+									<input name="group1" type="radio" />
+									<span>2 Wheeler</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input name="group1" type="radio" />
+									<span>4 Wheeler</span>
+								</label>
+							</p>
+				        </div>
+				        <div>
+				        	<label class="labels">Reserve parking from</label>
+				        	<input type="text" class="timepicker">
+				        </div>
+
+				        <div class="input-field">
+						    <select>
+						      <option value="" disabled selected>Choose your option</option>
+						      <option value="1">1 Hour</option>
+						      <option value="2">2 Hours</option>
+						      <option value="3">3 Hours</option>
+						      <option value="4">4 Hours</option>
+						      <option value="5">5 Hours</option>
+						      <option value="6">6 Hours</option>
+						    </select>
+						    <label style="color: black; font-size: 1em;">For how long?</label>
+						</div>
+
+						<div>
+							<div class="row">
+						        <div class="input-field col s6">
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix" style="font-size: 1.2em;">Registration # of Vehicle</label>
+						        </div>
+						        <div class="input-field col s6">
+						          <input id="icon_telephone" type="tel" class="validate">
+						          <label for="icon_telephone" style="font-size: 1.2em;">Contact #</label>
+						        </div>
+						      </div>
+						</div>
+
+						<center><button class="btn-large waves-effect waves-light" id="subButton" type="submit" name="action">Reserve Now
+						    <i class="material-icons right">send</i>
+						</button></center>
+					</form>
+				<!-- </div>
+			</div> -->
+		</div>
+	</div>
 	<script type="text/javascript" src="/javascripts/materialize.min.js"></script>
 	<script type="text/javascript" src="/javascripts/landing.js"></script>
 </body>

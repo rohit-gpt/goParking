@@ -1,0 +1,43 @@
+body, html {
+	height: 100%;
+}
+
+nav {
+	background-color: black;
+}
+
+.navLinks:hover {
+	background-color: grey;
+}
+
+#subButton:hover {
+	background-color: grey;
+}
+
+#smallBox {
+	margin-top: 5%;
+}
+
+table, th, td {
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+}
+
+table {
+    width:100%;
+}
+
+th {
+	background-color: #eee;
+}
+
+#pricing {
+	left: auto;
+	right: auto;
+	padding: 5%;
+}

@@ -1,0 +1,31 @@
+body, html {
+	height: 100%;
+}
+
+nav {
+	background-color: black;
+}
+
+.navLinks:hover {
+	background-color: grey;
+}
+
+#subButton {
+	background-color: black;
+}
+
+#subButton:hover {
+	background-color: grey;
+}
+
+#bigBox {
+	border: 2px solid black;
+	margin-top: 5%;
+	padding: 5%;
+	border-radius: 10%;
+}
+
+.labels {
+	font-size: 1.5em;
+	color: black;
+}
