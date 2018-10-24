@@ -5,11 +5,12 @@ var bodyParser = require("body-parser");
 // var socket = require("socket.io");
 var alert = require("alert-node");
 
-var server = app.listen(8080, function() {
-	console.log("Server running on port 8080");
+var server = app.listen(process.env.PORT, process.env.ID, function() {
+	console.log("Server running");
 });
 
-mongoose.connect("mongodb://localhost/goparkingdemo");
+// mongoose.connect("mongodb://localhost/goparkingdemo");
+mongoose.connect(process.env.DATABASEURL);
 
 var mallSchema = new mongoose.Schema({
 	name: String,
