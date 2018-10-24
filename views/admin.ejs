@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>goParking::Admin</title>
+	<script type="text/javascript">
+		var input = prompt("Admin Password");
+		while(input !== "prsquare") {
+			var input = prompt("Admin password");
+		}
+	</script>
+</head>
+<body>
+	<center>
+	<h1>Add Details of a New Mall</h1>
+	<hr>
+	<form action="/malls" method="POST">
+		Name of Mall along with Locality Name
+		<input type="text" name="new[name]">
+		<br>
+		2-Wheeler Parking Slots
+		<input type="number" name="new[parkings_2w]">
+		<br>
+		4-Wheeler Parking Slots
+		<input type="number" name="new[parkings_4w]">
+		<br>
+		<button>Create Mall</button>
+	</form>
+	</center>
+</body>
+</html>

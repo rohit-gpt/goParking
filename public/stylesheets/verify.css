@@ -1,0 +1,23 @@
+body, html {
+	height: 100%;
+}
+
+nav {
+	background-color: black;
+}
+
+.navLinks:hover {
+	background-color: grey;
+}
+
+h5 {
+	text-align: right;
+}
+
+.btn-large:hover {
+	background-color: grey;
+}
+
+.btn-large {
+	background-color: black;
+}

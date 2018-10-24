@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>goParking</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css"  media="screen,projection"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/verify.css">
+</head>
+<body>
+	<div class="navbar-fixed">
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="/" class="brand-logo center"><i class="fas fa-parking fa-2x"></i>goParking</a>
+		      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/pricing" class="navLinks">Pricing</a></li>
+		      	<li><a href="#" class="navLinks">Extend my Reservation</a></li>
+		        <li><a href="#" class="navLinks">Contact Us</a></li>
+		      </ul>
+		    </div>
+		</nav>
+	</div>
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="/pricing">Pricing</a></li>
+	    <li><a href="#">For Patrons</a></li>
+	    <li><a href="#">Contact Us</a></li>
+	</ul>
+
+	<div class="container">
+		<h1>Verify your Parking Reservation...</h1>
+		<hr>
+		<h6>Mall: </h6><h5><%= booking.mall_name %></h5>
+		<h6>Reservation from: </h6><h5><%= booking.start %>:00</h5>
+		<h6>Reservaton upto: </h6><h5><%= booking.end_time %>:00</h5>
+		<h6>Vehicle Category: </h6><h5><%= booking.vehicle_type %>heeler</h5>
+		<h6>Vehicle Registration #: </h6><h5><%= booking.reg_no %></h5>
+		<h6>Contact #: </h6><h5><%= booking.contact %></h5>
+		<h6>Sub-Total: </h6><h5><i class="fas fa-rupee-sign"></i> <%= booking.price %>.00</h5>
+		<h6>Internet Handling Fees: </h6><h5><i class="fas fa-rupee-sign"></i> 10.00</h5>
+		<h6>Grand Total: </h6><h5><i class="fas fa-rupee-sign"></i> <%= booking.grandtotal %>.00</h5>
+		<br>
+		<center>
+			<a class="waves-effect waves-light btn-large">Proceed to Pay <i class="fas fa-rupee-sign"></i> <%= booking.grandtotal %></a>
+			<a class="waves-effect waves-light btn-large" href="/">Make A New Booking</a>
+		</center>
+	</div>
+	<br><br><br><br>
+	<script type="text/javascript" src="/javascripts/materialize.min.js"></script>
+</body>
+</html>
