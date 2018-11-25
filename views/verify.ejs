@@ -43,7 +43,7 @@
 		<h6>Grand Total: </h6><h5><i class="fas fa-rupee-sign"></i> <%= booking.grandtotal %>.00</h5>
 		<br>
 		<center>
-			<a class="waves-effect waves-light btn-large">Proceed to Pay <i class="fas fa-rupee-sign"></i> <%= booking.grandtotal %></a>
+			<a href="/<%= booking._id %>/payment" class="waves-effect waves-light btn-large">Proceed to Pay <i class="fas fa-rupee-sign"></i> <%= booking.grandtotal %></a>
 			<a class="waves-effect waves-light btn-large" href="/">Make A New Booking</a>
 		</center>
 	</div>
