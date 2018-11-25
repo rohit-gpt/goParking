@@ -5,12 +5,12 @@ var bodyParser = require("body-parser");
 // var socket = require("socket.io");
 var alert = require("alert-node");
 
-// var server = app.listen(process.env.PORT | 8000 , function() {
-// 	console.log("Server running");
-// });
+var server = app.listen(process.env.PORT | 8000 , function() {
+	console.log("Server running");
+});
 
-// mongoose.connect("mongodb://localhost/goparkingdemo");
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect("mongodb://localhost/goparkingdemo");
+// mongoose.connect(process.env.DATABASEURL);
 
 // var bookingSchema = new mongoose.Schema({
 // 	mall_name: String,
@@ -173,50 +173,54 @@ app.post("/booking", function(req, res) {
 						}
 					}
 
-					if(req.body.vehicle_category === "4w") {
-						for(var i=0; i < found.parkings_4w; i++) {
-							var isEmpty = true;
-							for(var j=parseInt(req.body.start_time)-1; j<=parseInt(req.body.start_time)-2+parseInt(req.body.hours); j++) {
-								if(found.slots_4w[i][j] === true) {
-									isEmpty=false;
-									break;
-								}
-							}
+					if(isEmpty === false) {
+						res.redirect("/");
+					}
+				}
 
-							var updatedfound = found;
-
-							if(isEmpty === true) {
-								Bookings.create({
-									mall_name: req.body.mall_name,
-									vehicle_type: req.body.vehicle_category,
-									start: st,
-									end_time: end,
-									reg_no: req.body.reg_number,
-									contact: req.body.contact,
-									price: Price,
-									grandtotal: gt
-								}, function(err, newBooking) {
-									if(err) {
-										console.log(err);
-										res.redirect("/");
-									}
-									else {
-										for(var k=req.body.start_time-1; k<=parseInt(req.body.start_time) + parseInt(req.body.hours) - 2; k++) {
-											updatedfound.slots_4w[i][k] = true;
-										}
-										console.log(updatedfound);
-										Malls.findOneAndUpdate({name: req.body.mall_name}, updatedfound, function(err, updated) {
-											if(err) {
-												console.log(err);
-											}
-											else {
-												res.redirect("/booking/" + newBooking._id + "/verify");
-											}
-										})
-									}
-								});
+				if(req.body.vehicle_category === "4w") {
+					for(var i=0; i < found.parkings_4w; i++) {
+						var isEmpty = true;
+						for(var j=parseInt(req.body.start_time)-1; j<=parseInt(req.body.start_time)-2+parseInt(req.body.hours); j++) {
+							if(found.slots_4w[i][j] === true) {
+								isEmpty=false;
 								break;
 							}
+						}
+
+						var updatedfound = found;
+
+						if(isEmpty === true) {
+							Bookings.create({
+								mall_name: req.body.mall_name,
+								vehicle_type: req.body.vehicle_category,
+								start: st,
+								end_time: end,
+								reg_no: req.body.reg_number,
+								contact: req.body.contact,
+								price: Price,
+								grandtotal: gt
+							}, function(err, newBooking) {
+								if(err) {
+									console.log(err);
+									res.redirect("/");
+								}
+								else {
+									for(var k=req.body.start_time-1; k<=parseInt(req.body.start_time) + parseInt(req.body.hours) - 2; k++) {
+										updatedfound.slots_4w[i][k] = true;
+									}
+									console.log(updatedfound);
+									Malls.findOneAndUpdate({name: req.body.mall_name}, updatedfound, function(err, updated) {
+										if(err) {
+											console.log(err);
+										}
+										else {
+											res.redirect("/booking/" + newBooking._id + "/verify");
+										}
+									})
+								}
+							});
+							break;
 						}
 					}
 
@@ -256,6 +260,6 @@ app.get("/:id/payment", function(req, res) {
 	});
 });
 
-app.listen(process.env.PORT, process.env.IP, function() {
-	console.log("Server started");
-});
+// app.listen(process.env.PORT, process.env.IP, function() {
+// 	console.log("Server started");
+// });
